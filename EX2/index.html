@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Navigation Bar EX2</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family:Arial, Helvetica, sans-serif;
+      background: #f4f7f9;
+    }
+
+    .navbar {
+      background: #286fbb;
+      color: #fff;
+      padding: 15px 30px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .View {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* === Responsive===*/
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; /* hide menu */
+      }
+      .View {
+        display: block; /* show View */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">Logo</div>
+
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <div class="View">&#9776;</div>
+  </nav>
+
+</body>
+</html>

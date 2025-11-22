@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Responsive Grid Layout Exercise1</title>
+  <style>
+    :root{
+      --bg: #ecf3ec;
+      --card-bg: #5aa2e6; 
+      --card-border: #0745b8;
+      --gap: 18px;
+      --max-width: 1100px;
+    }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: var(--max-width);
+    }
+
+    /* Grid container */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* default: 3 columns for large screens */
+      gap: var(--gap);
+      align-items: start;
+    }
+
+    /* Card styling */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 18px 12px;
+      text-align: center;
+      border-radius: 6px;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+      min-height: 56px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:600;
+      color:#0a1616;
+      letter-spacing:0.2px;
+    }
+    @media (max-width: 1000px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+    }
+
+    /* At typical tablet width: 2 columns */
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+    }
+
+    /* Small phones: 1 column */
+    @media (max-width: 480px) {
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .card {
+        padding: 16px;
+        min-height: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page" role="main">
+    <!-- Grid with 8 items  -->
+    <section class="grid" aria-label="Items grid">
+      <div class="card">Item 1</div>
+      <div class="card">Item 2</div>
+      <div class="card">Item 3</div>
+      <div class="card">Item 4</div>
+      <div class="card">Item 5</div>
+      <div class="card">Item 6</div>
+      <div class="card">Item 7</div>
+      <div class="card">Item 8</div>
+    </section>
+
+  </div>
+</body>
+</html>
